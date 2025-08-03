@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body,
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    /* Example: applying a specific weight */
+}
+
 /* ======================================= GLOBAL ======================================= */
 body {
     margin: 0;
@@ -33,14 +46,19 @@ h2 {
 }
 
 #title {
-    background-image: url(banner4.jpg);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/banner.jpg);
     background-size: cover;
     /* Cubre todo el ancho/alto del contenedor */
     background-position: center;
     /* Centra la imagen */
     text-align: center;
     font-size: 26px;
-    padding: 20px;
+    height: 30vh;
     /* Relleno interior */
     margin: 0;
     /* Elimina margen exterior */
@@ -48,9 +66,22 @@ h2 {
     /* Sombra para dar profundidad */
 }
 
+#title h1 {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000bc;
+    color: #fff;
+}
+
 /* ======================================= HEADER ======================================= */
 header {
-    position: fixed;
+    position: sticky;
+    z-index: 100;
     /* Fija el header en la parte superior de la página */
     height: 80px;
     /* Altura del header */
