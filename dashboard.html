@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energías Renovables - Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+
+<body>
+    <header>
+
+        <img src="logo1.png" alt="logo" id="logo">
+
+        <input type="checkbox" id="check">
+        <label for="check" class="mostrar-menu">&#8801</label>
+
+        <nav class="menu">
+            <a href="./index.html">Inicio</a>
+            <a href="./Dashboard.html">Dashboard</a>
+            <a href="#feedback">Feedback</a>
+            <a href="#estimador">Calculadora</a>
+
+            <label for="check" class="esconder-menu">&#215</label>
+
+        </nav>
+
+    </header>
+    <section id="dashboardContainer">
+        <h1>DASHBOARD</h1>
+        <div id="canvasContainer">
+            <canvas id="barChart"></canvas>
+        </div>
+    </section>
+
+    <script src="./src/js/crearGrafico.js"></script>
+</body>
+
+</html>
