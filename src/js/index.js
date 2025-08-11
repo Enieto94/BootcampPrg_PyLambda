@@ -162,3 +162,33 @@ document.getElementById("contactanos-form").addEventListener("submit", function 
 });
 
 
+
+
+// Funcionalidad calculadora
+
+function calcular() {
+    event.preventDefault();
+    const consumo = parseFloat(document.getElementById("consumo").value);
+    const capacidad = parseFloat(document.getElementById("solar").value);
+
+    if (isNaN(consumo) || isNaN(capacidad) || consumo <= 0 || capacidad <= 0) {
+        document.getElementById("resultado").textContent = "Por favor ingresa valores válidos.";
+        return;
+    }
+
+    // Factor de producción solar (horas solares pico * días)
+    // Si es mensual → aprox. 4.5 horas/día * 30 días = 135 h
+    // Si es anual   → aprox. 4.5 horas/día * 365 días = 1642 h
+    // Aquí usamos mensual como ejemplo
+    const HORAS_SOLARES_PICO_MES = 135;
+
+    // Energía solar estimada generada (kWh)
+    const energiaSolar = capacidad * HORAS_SOLARES_PICO_MES;
+
+    // Porcentaje de consumo cubierto por solar
+    const porcentaje = (energiaSolar / consumo) * 100;
+
+    document.getElementById("resultado").textContent =
+        `Tus paneles solares generan aproximadamente ${energiaSolar.toFixed(2)} kWh,
+         lo que cubre el ${porcentaje.toFixed(1)}% de tu consumo.`;
+}
