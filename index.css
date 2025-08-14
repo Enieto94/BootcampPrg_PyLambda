@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+
+}
+
+/* ======================================= HEADER ======================================= */
+header {
+    position: fixed;
+    /* Fija el header en la parte superior de la página */
+    z-index: 1000;
+    /* Asegura que esté encima de todo */
+    height: 80px;
+    /* Altura del header */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 5px 50px;
+    /* Espaciado interno arriba/abajo 5px y lados 50px */
+    color: #212121;
+    display: flex;
+    /* Distribuye los elementos en fila */
+    justify-content: space-between;
+    /* Espacia elementos entre extremos */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    box-shadow: 0 0 10px #383737;
+    /* Sombra inferior para separar del contenido */
+}
+
+img {
+    width: 210px;
+    /* Establece ancho fijo para el logo o imagen del header */
+}
+
+.menu a {
+    color: #212121;
+    text-decoration: none;
+    /* Quita el subrayado */
+    padding: 4px 10px;
+    /* Espaciado interno del enlace */
+    border-radius: 30px;
+    /* Bordes redondeados para forma de botón */
+    transition: 0.5s;
+    /* Transición suave para efectos */
+    display: inline-block;
+    /* Permite aplicar márgenes y padding */
+    margin: 0 10px;
+    /*Esta línea crea separación horizontal */
+    transition: 0.2s ease;
+    /* Transición más rápida para efectos */
+}
+
+.mostrar-menu,
+.esconder-menu {
+    font-size: 30px;
+    /* Tamaño del ícono de menú */
+    display: none;
+    /* Ocultos por defecto en pantallas grandes */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+}
+
+.mostrar-menu {
+    order: 1;
+    /* Cambia el orden en el contenedor flexible */
+}
+
+.menu a:hover {
+    background-color: #1c3424;
+    /* Fondo del enlace al hacer hover */
+    color: #a4cc6b;
+    /* Cambia el color del texto al hacer hover */
+    border-radius: 30px;
+    /* Mantiene los bordes redondeados */
+    transform: scale(1.08);
+    /* Agranda ligeramente el botón */
+}
+
+#check {
+    display: none;
+    /* Oculta el checkbox usado para el menú responsive */
+}
+
+/* ================================RESPONSIVE HEADER================================ */
+@media(max-width: 768px) {
+
+    /* Íconos de menú hamburguesa y cerrar visibles en pantallas pequeñas */
+    .mostrar-menu,
+    .esconder-menu {
+        display: block;
+        /* Muestra los íconos en móvil */
+    }
+
+    .menu {
+        position: fixed;
+        /* Fija el menú en la pantalla */
+        width: 50%;
+        /* Ocupa el 50% del ancho de la pantalla */
+        height: 50%;
+        /* Altura del menú desplegable */
+        background: white;
+        /* Fondo blanco para el menú */
+        box-shadow: 0 0 10px #383737;
+        /* Sombra alrededor del menú */
+        right: -100%;
+        /* Oculta el menú fuera de la pantalla al inicio */
+        top: 0;
+        /* Posición desde la parte superior */
+        text-align: center;
+        /* Centra el texto del menú */
+        padding: 100px 0px;
+        /* Espaciado vertical del contenido del menú */
+        z-index: 100;
+        /* Asegura que esté encima de otros elementos */
+        transition: 0.5s;
+        /* Transición suave al aparecer/desaparecer */
+    }
+
+    .menu a {
+        display: block;
+        /* Cada enlace ocupa toda la línea */
+        margin: 0 20px;
+        /* Espaciado horizontal */
+        padding: 4px 10px;
+        /* Espaciado interno del enlace */
+        margin-bottom: 10px;
+        /* Nueva línea: separación vertical entre enlaces */
+    }
+
+    .esconder-menu {
+        position: absolute;
+        /* Posición absoluta respecto al menú */
+        top: 40px;
+        /* Desde la parte superior */
+        right: 40px;
+        /* Desde la parte derecha */
+    }
+
+    #check:checked~.menu {
+        right: 0;
+        /* Muestra el menú cuando se activa el checkbox */
+    }
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("Fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Cubre todo el ancho/alto del contenedor */
+    background-position: center;
+    /* Centra la imagen */
+}
+
+.conteiner.swiper {
+    margin-top: 30px;
+    /* Ajusta según lo que necesites */
+}
+
+.cards-box {
+    max-width: 1100px;
+    margin: 0 60px 30px;
+    padding: 20px 10px;
+    overflow: hidden;
+
+}
+
+.card-list .card-item .card-link {
+    user-select: none;
+    display: block;
+    background: rgb(255, 255, 255, 0.2);
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    list-style: none;
+    border: #a4cc6b00 solid; //no le puse color para que no se mueva el hover
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-list .card-item .card-link:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.203);
+    border: #a4cc6b solid;
+}
+
+.card-list .card-link .card-image {
+
+    width: 50%;
+    /*antes era 100%*/
+    /*aspect-ratio: 16/9;*/
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    /* Necesario para centrar con margin .. areglo*/
+    margin: 0 auto;
+    /* Centra horizontalmente ...arreglo*/
+}
+
+.card-list .card-link .card-titulo {
+    color: white;
+    background: #a4cc6b;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 16px 0 18px;
+    width: fit-content;
+    border-radius: 50px;
+}
+
+.card-list .card-link .card-description {
+    font-size: 1.19rem;
+    color: #212121;
+    font-weight: 600;
+}
+
+.card-list .card-link .card-button {
+    height: 35px;
+    width: 35px;
+    color: #a4cc6b;
+    border-radius: 50%;
+    margin: 30px 0 5px;
+    background: none;
+    cursor: pointer;
+    border: 2px solid #a4cc6b;
+    transform: rotate(-45deg);
+    transition: 0.4s ease;
+
+}
+
+.card-list .card-link:hover .card-button {
+    color: white;
+    background: #a4cc6b;
+}
+
+.cards-box .swiper-pagination-bullet {
+    height: 15px;
+    width: 15px;
+    opacity: 0.5;
+    background: #a4cc6b;
+}
+
+.cards-box .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.cards-box .swiper-slide-button {
+    color: #ffffff;
+    margin-top: -35px;
+}
+
+@media (max-width: 768px) {
+    .conteiner.swiper {
+        margin-top: 80px;
+        /* más espacio en móviles si quieres */
+    }
+}

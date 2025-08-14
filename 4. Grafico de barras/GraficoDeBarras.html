@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- link mi css -->
+  <link rel="stylesheet" href="./GraficoDeBarras.css">
+
+  <title>Grafico De Barras</title>
+</head>
+
+<body>
+  <header>
+        <img src="/1. Pagina de Inicio/logo.png" alt="logo" id="logo">
+        <input type="checkbox" id="check">
+        <label for="check" class="mostrar-menu">&#8801</label>
+        <nav class="menu">
+            <a href="/1. Pagina de Inicio/Inicio.html">Inicio</a>
+            <a href="/2. Dashboard/Dashboard.html">Dashboard</a>
+            <a href="/1. Pagina de Inicio/Inicio.html#feedback">Feedback</a>
+            <a href="/1. Pagina de Inicio/Inicio.html#estimador">Calculadora</a>
+            <label for="check" class="esconder-menu">&#215</label>
+        </nav>
+    </header>
+  
+  <div class="estandar_tamano">
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+    <!--implementacion libreria chart-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+    <script src="./JS/Linea.js"></script>
+  <script src="./GraficoDeBarras.js"></script>
+
+</body>
+
+</html>
